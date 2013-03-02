@@ -1,0 +1,28 @@
+
+[data-widget='slider']
+  +clearfix
+  position: relative
+
+  > .viewport
+    position: absolute
+    overflow: hidden
+    margin: auto
+    > .slides_wrapper
+      +clearfix
+      height: 100%
+      position: relative
+      > .slide
+        float: left
+        height: 100%
+
+  > .previous, > .next
+    position: absolute
+    cursor: pointer
+
+  > ul.navigation
+    position: absolute
+    > li
+      float: left
+      cursor: pointer
+
+

@@ -1,0 +1,35 @@
+
+[data-widget='scroll_bar']
+
+  > .scroll_bar
+    position: absolute
+    *
+      position: absolute
+      cursor: pointer
+      &.disabled
+        cursor: default
+    > .track
+      cursor: default
+
+    > .up
+      top: 0
+      right: 0
+    > .down
+      right: 0
+    > .left
+      left: 0
+      bottom: 0
+    > .right
+      bottom: 0
+
+    &.vertical
+      top: 0
+      right: 0
+      bottom: 0
+
+    &.horizontal
+      right: 0
+      bottom: 0
+      left: 0
+
+

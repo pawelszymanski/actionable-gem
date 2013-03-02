@@ -1,0 +1,11 @@
+
+@function ln($x)
+  $ret: 0
+  $n: 1
+  $dx: .001
+  @while $n <= $x
+    $ret: $ret + $dx / $n
+    $n: $n + $dx
+  @return $ret
+
+

@@ -1,0 +1,8 @@
+
+@function sin($rad)
+  $ret: 0
+  @for $n from 0 to 25
+    $ret: $ret + power(-1, $n) * power($rad, 2 * $n + 1) / factorial(2 * $n + 1)
+  @return $ret
+
+

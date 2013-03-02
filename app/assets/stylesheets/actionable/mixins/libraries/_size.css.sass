@@ -1,0 +1,18 @@
+
+@mixin size($width, $arg_2: '', $arg_3: '')
+
+  width: $width
+
+  @if $arg_2 == 'content-box' or $arg_2 == 'padding-box' or $arg_2 == 'border-box'
+    height: $width
+    @include box-sizing($arg_2)
+  @else
+    @if $arg_2 == ''
+      height: $width
+    @else
+      height: $arg_2
+
+  @if $arg_3 != ''
+    @include box-sizing($arg_3)
+
+

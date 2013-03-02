@@ -1,0 +1,33 @@
+
+[data-widget='dropdown']
+  float: left
+  overflow: visible
+  cursor: pointer
+  position: relative
+  +disable-selection
+
+  > .value
+    float: left
+    +box-sizing(border-box)
+    text-align: left
+
+  > .clicker
+    +box-sizing(border-box)
+    float: left
+
+  > ul.options
+    min-width: 100%
+    +box-sizing(border-box)
+    position: absolute
+    left: 0px
+    z-index: 1
+    list-style-type: none
+    > li
+      clear: both
+      min-width: 100%
+      +box-sizing(border-box)
+      text-align: left
+      +clearfix
+      cursor: pointer
+
+

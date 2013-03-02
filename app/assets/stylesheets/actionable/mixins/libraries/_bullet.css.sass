@@ -1,0 +1,17 @@
+
+@mixin bullet($color, $fontsize, $x_offset, $y_offset, $content: '\2022')
+  &:before
+    display: block
+    position: relative
+    max-width: 0px
+    max-height: 0px
+
+  padding-left: -$x_offset
+  &:before
+    color: $color
+    font-size: $fontsize
+    left: $x_offset
+    top: $y_offset
+    content: $content
+
+

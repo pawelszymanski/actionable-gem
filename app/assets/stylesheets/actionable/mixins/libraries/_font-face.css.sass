@@ -1,0 +1,17 @@
+
+$webfonts_path: '/webfonts/'
+$webfonts_filename_suffix: '-webfont'
+
+@mixin font-face($font_family, $file_name, $class: '')
+  @font-face
+    font-family: '#{$font_family}'
+    src: url('#{$webfonts_path}#{$file_name}#{$webfonts_filename_suffix}.eot')
+    src: local('this-fix-frobids-browser-of-use-locally-installed-fonts'), url('#{$webfonts_path}#{$file_name}#{$webfonts_filename_suffix}.eot?#iefix') format('embedded-opentype'), url('#{$webfonts_path}#{$file_name}#{$webfonts_filename_suffix}.woff') format('woff'), url('#{$webfonts_path}#{$file_name}#{$webfonts_filename_suffix}.ttf') format('truetype'), url('#{$webfonts_path}#{$file_name}#{$webfonts_filename_suffix}.svg##{$font_family}') format('svg')
+    font-weight: normal
+    font-style: normal
+
+  @if $class != ''
+    .font_#{$class}
+      font-family: '#{$font_family}' !important
+
+

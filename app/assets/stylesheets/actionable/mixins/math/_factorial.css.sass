@@ -1,0 +1,12 @@
+
+@function factorial($x)
+  $ret: 1
+  @if $x > 0
+    @while $x > 0
+      $ret: $ret * $x
+      $x: $x - 1
+  @else
+    $ret: 1
+  @return $ret
+
+

@@ -1,0 +1,63 @@
+
+@mixin font($arg_1, $arg_2: '', $arg_3: '', $arg_4: '', $arg_5: '', $arg_6: '', $arg_7: '', $arg_8: '', $arg_9: '', $arg_10: '', $arg_11: '', $arg_12: '', $arg_13: '', $arg_14: '', $arg_15: '')
+
+  $numbers_in_mixin: 0
+  $font_family: ''
+  $fonts_count: 0
+  @each $arg in $arg_1, $arg_2, $arg_3, $arg_4, $arg_5, $arg_6, $arg_7, $arg_8, $arg_9, $arg_10, $arg_11, $arg_12, $arg_13, $arg_14, $arg_15
+
+    @if type-of($arg) == color
+      color: $arg
+
+    @if type-of($arg) == number
+      @if $numbers_in_mixin == 0
+        font-size: $arg
+        $numbers_in_mixin: $numbers_in_mixin + 1
+      @else
+        line-height: $arg
+
+    @if type-of($arg) == string
+      $property: ''
+      @if $arg != ''
+
+        @if $arg == 'lighter' or $arg == 'light' or $arg == 'bold' or $arg == 'bolder'
+          font-weight: $arg
+          $property: 'weight'
+        @if $arg == 'no-weight'
+          font-weight: normal
+          $property: 'weight'
+
+        @if $arg == 'italic' or $arg == 'oblique'
+          font-style: $arg
+          $property: 'style'
+        @if $arg == 'no-style'
+          font-style: normal
+          $property: 'style'
+
+        @if $arg == 'left' or $arg == 'right' or $arg == 'center' or $arg == 'justyfy'
+          text-align: $arg
+          $property: 'align'
+
+        @if $arg == 'underline' or $arg == 'overline' or $arg == 'line-through' or $arg == 'blink'
+          text-decoration: $arg
+          $property: 'decoration'
+        @if $arg == 'no-decoration'
+          text-decoration: none
+          $property: 'decoration'
+
+        @if $arg == 'capitalize' or $arg == 'uppercase' or $arg == 'lowercase'
+          text-transform: $arg
+          $property: 'transform'
+        @if $arg == 'no-transform'
+          text-transform: none
+          $property: 'transform'
+
+        @if $property != 'weight' and $property != 'style' and $property != 'align' and $property != 'decoration' and $property != 'transform'
+          @if $fonts_count > 0
+            $font_family: $font_family + ', '
+          $font_family: $font_family + "'" + $arg + "'"
+          $fonts_count : $fonts_count + 1
+  @if $fonts_count > 0
+    font-family: #{$font_family}
+
+

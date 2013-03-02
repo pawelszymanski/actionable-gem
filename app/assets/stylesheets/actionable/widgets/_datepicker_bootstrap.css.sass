@@ -1,0 +1,33 @@
+
+.calendar
+  +disable-selection
+  > .nav
+    position: relative
+    > .prev
+      +position-block(absolute, 0, auto, auto, 0, 1)
+      cursor: pointer
+      &.disabled
+        cursor: default
+    > .month
+      width: 100%
+      text-align: center
+    > .next
+      +position-block(absolute, 0, 0, auto, auto, 1)
+      cursor: pointer
+      &.disabled
+        cursor: default
+
+  > ul.legend
+    clear: both
+    > li
+      float: left
+
+  > ul.days
+    clear: both
+    > li
+      float: left
+      cursor: pointer
+      &.disabled
+        cursor: default
+
+

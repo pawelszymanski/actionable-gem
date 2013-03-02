@@ -1,0 +1,12 @@
+
+@mixin gradient-linear-vertical($color_from, $color_to, $balance_point: 50%)
+  background: $color_from
+  background: -webkit-gradient(linear, left top, left bottom, from($color_from), to($color_to))
+  background: -webkit-linear-gradient(top, $color_from (($balance_point*2) - 100%), $color_to)
+  background:    -moz-linear-gradient(top, $color_from (($balance_point*2) - 100%), $color_to)
+  background:     -ms-linear-gradient(top, $color_from (($balance_point*2) - 100%), $color_to)
+  background:      -o-linear-gradient(top, $color_from (($balance_point*2) - 100%), $color_to)
+  background:         linear-gradient(top, $color_from (($balance_point*2) - 100%), $color_to)
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#{$color_from}', EndColorStr='#{$color_to}', GradientType=0)
+
+
