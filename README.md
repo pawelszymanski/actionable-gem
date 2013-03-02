@@ -4,14 +4,21 @@ Actionable description TODO.
 
 ## Installation
 
-Add this line to your application's Gemfile:
+Since gem is still in private repository you can install it by adding this to you Gemfile:
 
-    gem 'actionable'
+    gem 'actionable', git: 'git@github.com:pawelszymanski/actionable-gem.git'
 
 And then execute:
 
-    $ bundle
+    $ bundle install
 
-Or install it yourself as:
+To include gem file into your assets you need to edit
 
-    $ gem install actionable
+- `app/assets/javascripts/application.js` and add this line
+
+    //= require actionable
+
+- `app/assets/stylesheets/application.css` and add this line
+
+    //= require actionable
+
