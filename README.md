@@ -16,9 +16,9 @@ To include gem file into your assets you need to edit
 
 - `app/assets/javascripts/application.js` and add this line
 
-    //= require actionable
+        //= require actionable
 
 - `app/assets/stylesheets/application.css` and add this line
 
-    //= require actionable
+        //= require actionable
 
