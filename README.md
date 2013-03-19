@@ -14,11 +14,15 @@ And then execute:
 
 To include gem file into your assets you need to edit
 
-- `app/assets/javascripts/application.js` and add this line
+1. app/assets/javascripts/application.js` and add this line
 
         //= require actionable
 
-- `app/assets/stylesheets/application.css` and add this line
+2.a. `app/assets/stylesheets/application.css` and add this line
 
         //= require actionable
+
+2.b. `app/assets/stylesheets/application.css.sass` and add this line
+
+        @import actionable
 
