@@ -56,6 +56,9 @@ class @Radio
     @input.on 'change.actionable.radio', =>
       @select()  if @isSelected()    # This provides support for labels
 
+    @wrapper.on 'focusin.actionable.radio', =>
+      @wrapper.focus()
+
 
 
 $ ->
