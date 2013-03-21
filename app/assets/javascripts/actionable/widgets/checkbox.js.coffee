@@ -50,6 +50,9 @@ class @Checkbox
       unless @isDisabled()
         @toggle()
 
+    @wrapper.on 'focusin.actionable.checkbox', =>
+      @wrapper.focus()
+
 
 
 $ ->
