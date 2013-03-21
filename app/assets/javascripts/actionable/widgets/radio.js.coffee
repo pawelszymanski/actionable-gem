@@ -41,7 +41,7 @@ class @Radio
     @HIDDEN_CLASS = 'pushed_back'
 
     @input = $(@element)
-    @input.addClass(@HIDDEN_CLASS).wrap("<div class='" + @WRAPPER_CLASS + "'/>")
+    @input.addClass(@HIDDEN_CLASS).wrap("<div class='" + @WRAPPER_CLASS + " tabindex='-1'/>")
 
     @wrapper = @input.parent()
     @wrapper.data('radio_object', this)

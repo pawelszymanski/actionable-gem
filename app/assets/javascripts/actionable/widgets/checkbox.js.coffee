@@ -38,7 +38,7 @@ class @Checkbox
     @HIDDEN_CLASS = 'pushed_back'
 
     @input = $(@element)
-    @input.addClass(@HIDDEN_CLASS).wrap("<div class='" + @WRAPPER_CLASS + "'/>")
+    @input.addClass(@HIDDEN_CLASS).wrap("<div class='" + @WRAPPER_CLASS + " tabindex='-1'/>")
 
     @wrapper = @input.parent()
     @wrapper.data('checkbox_object', this)
@@ -49,9 +49,6 @@ class @Checkbox
     @wrapper.on 'click.actionable.checkbox', =>
       unless @isDisabled()
         @toggle()
-
-    @wrapper.on 'focusin.actionable.checkbox', =>
-      @wrapper.focus()
 
 
 
