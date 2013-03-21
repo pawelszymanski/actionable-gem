@@ -50,10 +50,6 @@ class @Checkbox
       unless @isDisabled()
         @toggle()
 
-    @input.on 'click.actionable.checkbox', (event) =>
-      event.stopPropagation()                          # Labels for checkboxes directly trigger onClick on checkboxes, got no idea why this even is duplicated thou
-      if @isChecked() then @check() else @uncheck()    # This provides support for labels
-
 
 
 $ ->
